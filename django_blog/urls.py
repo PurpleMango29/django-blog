@@ -20,6 +20,7 @@ from django.urls.conf import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('polling.urls')), # redirects to the polls
-    path('polling/', include('polling.urls'))
+    path('', include('polling.urls')),  # redirects to the polls
+    path('polling/', include('polling.urls')),
+    path('blogging/', include('blogging.urls')),
 ]
