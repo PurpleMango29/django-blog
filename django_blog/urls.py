@@ -18,9 +18,14 @@ from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
 
+from django.contrib.auth.views import LoginView, LogoutView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('polling.urls')),  # redirects to the polls
+    # path('', include('blogging.urls')),  # redirects to the blogs
     path('polling/', include('polling.urls')),
     path('blogging/', include('blogging.urls')),
+    path('login/', LoginView.as_view(template_name='login.html', next_page='/'), name='login'),  # name needs to match name used in base.html
+    path('logout/', LogoutView.as_view(next_page='/'), name='logout'),  # name needs to match name used in base.html
 ]
