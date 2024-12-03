@@ -1,6 +1,6 @@
 body {
-    background-color: #eee;
-    color: #111;
+    background-color: #F9F9F9;
+    color: #19231A;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     margin:0;
     padding:0;
@@ -11,8 +11,8 @@ body {
     margin-top: 0px;
 }
 #header {
-    background-color: #333;
-    border-botton: 1px solid #111;
+    background-color: #33673B;
+    border-bottom: 5px dotted #CC3F0C;
     margin:0;
     padding:0;
 }
@@ -21,7 +21,7 @@ body {
     list-style: none;
     list-style-type: none;
     text-align: right;
-    color: #eee;
+    color: #F9F9F9;
     font-size: 80%;
     padding-bottom: 0.4em;
 }
@@ -29,12 +29,12 @@ body {
     display: inline-block;
 }
 #control-bar li a {
-    color: #eee;
+    color: #F9F9F9;
     padding: 0.5em;
     text-decoration: none;
 }
 #control-bar li a:hover {
-    color: #cce;
+    color: #CC3F0C;
 }
 #content {
     margin: 0em 1em 1em;
@@ -47,14 +47,16 @@ ul#entries {
 div.entry {
     margin-right: 2em;
     margin-top: 1em;
-    border-top: 1px solid #cecece;
+    border-top: 10px solid #E3F211;
 }
 ul#entries li:first-child div.entry {
     border-top: none;
     margin-top: 0em;
 }
 div.entry-body {
-    margin-left: 2em;
+    margin-left: 1em;
+    border: 1px solid gray;
+    padding: 8px;
 }
 .notification {
     float: right;
@@ -69,6 +71,38 @@ ul.categories {
     list-style: none;
     list-style-type: none;
 }
+ul.categories::after {
+    content: "🎄";
+}
 ul.categories li {
     display: inline;
+}
+li::before {
+    content: "🎄";
+}
+.footer {
+    background-color: #33673B;
+    border-top: 5px dotted #CC3F0C;
+    color: #F9F9F9;
+    width: 100%;
+    margin:0;
+    padding:0;
+    left: 0;
+    bottom: 0;
+}
+.byline {
+    font-style: italic;
+    color: gray;
+}
+.poll a:link, a:visited {
+      color: #9A6D38;
+      padding: 14px 25px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover, a:active {
+      background-color: red;
+    }
 }

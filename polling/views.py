@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
-from django.http import Http404
 from polling.models import Poll
 
 class PollListView(ListView):

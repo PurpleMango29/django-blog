@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>{{ poll.title }}</h1>
-<div class="poll-body">
-    Description: {{ poll.text }}
+Poll Description:
+<div class="entry-body">
+    {{ poll.text }}
 </div>
+<p></p>
 <div class="poll-score">
     Current Score: {{ poll.score }}
 </div>
