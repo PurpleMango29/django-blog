@@ -28,9 +28,10 @@ class CategoryTest(TestCase):
 
 class FrontEndTestCase(TestCase):
     fixtures = ['blogging_test_fixture.json', ]
+
     def setUp(self):
         self.now = datetime.datetime.now()
-        self.timedelta = datetime.time(15)  # adds a delay
+        self.timedelta = datetime.timedelta(15)  # adds a delay
         author = User.objects.get(pk=1)
         for count in range(1, 11):
             post = Post(title=f"Post {count} Title", text="foo", author=author)
@@ -40,7 +41,7 @@ class FrontEndTestCase(TestCase):
             post.save()
 
     def test_list_only_published(self):
-        resp = self.client.get('/')
+        resp = self.client.get('/blogging/')
         resp_text = resp.content.decode(resp.charset)
         self.assertTrue("Recent Posts" in resp_text)
         for count in range(1, 11):
@@ -49,6 +50,7 @@ class FrontEndTestCase(TestCase):
                 self.assertContains(resp, title, count=1)
             else:
                 self.assertNotContains(resp, title)
+
     def test_details_only_published(self):
         for count in range(1, 11):
             title = f'Post {count} Title'
@@ -61,5 +63,4 @@ class FrontEndTestCase(TestCase):
                 self.assertEqual(resp.status_code, 404)
 
 # Run the test: `python manage.py test blogging`
-
 # Or run the tests (if multiple files): `python manage.py test`
